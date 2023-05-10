@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<title>Exemplo PHP</title>
+<title>Example PHP</title>
 </head>
 <body>
 
@@ -13,12 +13,12 @@ header('Content-Type: text/html; charset=iso-8859-1');
 
 echo 'Versao Atual do PHP: ' . phpversion() . '<br>';
 
-$servername = "54.234.153.24";
+$servername = "54.85.248.238";
 $username = "root";
-$password = "Senha123";
-$database = "meubanco";
+$password = "Password123";
+$database = "mydatabase";
 
-// Criar conexão
+// Create connection.
 
 
 $link = new mysqli($servername, $username, $password, $database);
@@ -29,12 +29,12 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-$valor_rand1 =  rand(1, 999);
-$valor_rand2 = strtoupper(substr(bin2hex(random_bytes(4)), 1));
+$value_rand1 =  rand(1, 999);
+$value_rand2 = strtoupper(substr(bin2hex(random_bytes(4)), 1));
 $host_name = gethostname();
 
 
-$query = "INSERT INTO dados (AlunoID, Nome, Sobrenome, Endereco, Cidade, Host) VALUES ('$valor_rand1' , '$valor_rand2', '$valor_rand2', '$valor_rand2', '$valor_rand2','$host_name')";
+$query = "INSERT INTO data (ClientID, First Name, Last Name, Address, City, Host) VALUES ('$value_rand1' , '$value_rand2', '$value_rand2', '$value_rand2', '$value_rand2','$host_name')";
 
 
 if ($link->query($query) === TRUE) {
